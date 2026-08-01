@@ -25,3 +25,18 @@ output "s3_bucket_name" {
   description = "Name of the company data bucket."
   value       = module.s3.bucket_name
 }
+
+output "cloudtrail_log_group_name" {
+  description = "CloudWatch Logs group with near-real-time CloudTrail events. Search it in the AWS console under CloudWatch > Log groups."
+  value       = module.logging.cloudtrail_log_group_name
+}
+
+output "cloudtrail_bucket_name" {
+  description = "S3 bucket holding the full CloudTrail history."
+  value       = module.logging.cloudtrail_bucket_name
+}
+
+output "guardduty_detector_id" {
+  description = "GuardDuty detector ID. View findings in the AWS console under GuardDuty > Findings."
+  value       = module.logging.guardduty_detector_id
+}

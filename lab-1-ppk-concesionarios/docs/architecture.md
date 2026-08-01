@@ -49,6 +49,8 @@ ambos dominios a la IP pública de la instancia; nginx distingue entre
 | RDS MySQL 8.0 | `rds` | Base de datos de la aplicación (vehículos, clientes, solicitudes, usuarios), en subred privada, sin acceso público. |
 | IAM Role + Instance Profile | `iam` | Permisos mínimos (`s3:ListBucket`, `s3:GetObject`) sobre el bucket `ppk-company-data`, para que la sección "Documentación comercial" de la app pueda listar folletos. |
 | S3 bucket `ppk-company-data` | `s3` | Almacén corporativo compartido: folletos comerciales (uso legítimo de la app) y también contratos, exportaciones de clientes, informes financieros y configuración antigua (uso indebido si se compromete el rol). Bucket privado, sin acceso público. |
+| CloudTrail (trail + bucket + log group) | `logging` | Registro de llamadas a la API de AWS, en S3 y en CloudWatch Logs. No forma parte del ataque; es la instrumentación para revisarlo después. |
+| GuardDuty detector | `logging` | Detección de amenazas a nivel de cuenta. Ver [`docs/detection.md`](detection.md) para qué hallazgos genera esta cadena de ataque en concreto. |
 
 ## Por qué la instancia puede leer todo el bucket
 

@@ -22,6 +22,7 @@ Documentación completa:
 - [`docs/deployment.md`](docs/deployment.md) — cómo desplegar con Terraform y configurar el hosts file.
 - [`docs/vulnerabilities.md`](docs/vulnerabilities.md) — explicación técnica de cada fallo.
 - [`docs/attack-chain.md`](docs/attack-chain.md) — la cadena de ataque completa, paso a paso.
+- [`docs/detection.md`](docs/detection.md) — qué queda registrado en CloudTrail/GuardDuty (lado defensivo).
 
 ## Estructura del repositorio
 

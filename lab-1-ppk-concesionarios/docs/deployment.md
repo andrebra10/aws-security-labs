@@ -74,6 +74,15 @@ sudo docker compose -f /opt/ppk-portal/docker-compose.yml ps
 Cuando `http://ppkconcesionario.com` responda con la landing page, el
 laboratorio está listo para auditar.
 
+## CloudTrail y GuardDuty
+
+El `apply` también crea un trail de CloudTrail (bucket S3 + CloudWatch Logs)
+y un detector de GuardDuty, para poder revisar la auditoría desde el lado
+defensivo (ver [`docs/detection.md`](detection.md)). Solo se permite **un**
+detector de GuardDuty por cuenta/región: si ya tienes GuardDuty activado en
+esa cuenta y región, pon `enable_guardduty = false` en tu
+`terraform.tfvars` antes de aplicar, o el `apply` fallará.
+
 ## Destruir el laboratorio
 
 ```bash

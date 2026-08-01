@@ -65,3 +65,10 @@ module "ec2" {
   db_username = module.rds.db_username
   db_password = module.rds.db_password
 }
+
+module "logging" {
+  source = "../../modules/logging"
+
+  project_name     = var.project_name
+  enable_guardduty = var.enable_guardduty
+}

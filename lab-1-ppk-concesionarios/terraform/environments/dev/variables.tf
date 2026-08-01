@@ -75,3 +75,9 @@ variable "bucket_name_prefix" {
   type        = string
   default     = "ppk-company-data"
 }
+
+variable "enable_guardduty" {
+  description = "Whether to enable a GuardDuty detector for this account/region. Leave enabled unless GuardDuty is already active elsewhere in this account (only one detector is allowed per region)."
+  type        = bool
+  default     = true
+}

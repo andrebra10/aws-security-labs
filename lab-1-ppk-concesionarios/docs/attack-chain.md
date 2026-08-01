@@ -149,3 +149,11 @@ Un atacante que partió únicamente de una IP pública y un dominio termina con:
 Ninguno de los pasos es, por sí solo, "el gran fallo" — es la combinación de
 varios errores pequeños y plausibles lo que compromete la infraestructura
 completa.
+
+## Y desde el lado defensivo
+
+El laboratorio despliega también CloudTrail y GuardDuty. Ver
+[`docs/detection.md`](detection.md) para el detalle de qué pasos de esta
+cadena quedan registrados y cuál dispara el hallazgo de GuardDuty más
+relevante (`InstanceCredentialExfiltration.OutsideAWS`, si las credenciales
+del rol se usan fuera de la instancia comprometida).
