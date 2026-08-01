@@ -1,0 +1,14 @@
+id,nombre_completo,email,telefono,dni,ciudad,vehiculo_interes,ultimo_contacto
+1001,Laura Ibáñez Soto,laura.ibanez@example.com,+34 611 222 333,45678912X,Valencia,SEAT León,2026-01-10
+1002,Javier Molina Prat,javier.molina@example.com,+34 622 333 444,44567891Y,Barcelona,Volkswagen T-Roc,2026-01-19
+1003,Nuria Campos Reyes,nuria.campos@example.com,+34 633 444 555,43456789Z,Madrid,Renault Clio,2026-01-28
+1004,Sergio Ferrer Vidal,sergio.ferrer@example.com,+34 644 555 666,42345678A,Sevilla,Peugeot 3008,2026-02-05
+1005,Marta Lozano Aguirre,marta.lozano@example.com,+34 655 666 777,41234567B,Valencia,Toyota Corolla,2026-02-14
+1006,Diego Salas Peña,diego.salas@example.com,+34 666 777 888,40123456C,Zaragoza,Kia Sportage,2026-02-22
+1007,Elena Rubio Castell,elena.rubio@example.com,+34 677 888 999,39012345D,Alicante,Hyundai Tucson,2026-03-01
+1008,Álvaro Nieto Font,alvaro.nieto@example.com,+34 688 999 000,38901234E,Bilbao,Skoda Octavia,2026-03-11
+1009,Cristina Vega Molano,cristina.vega@example.com,+34 699 000 111,37890123F,Madrid,SEAT Ateca,2026-03-19
+1010,Raúl Ortega Prieto,raul.ortega@example.com,+34 610 111 222,36789012G,Valencia,Renault Captur,2026-03-27
+
+# Exportación generada por el CRM interno para la campaña de post-venta Q2.
+# Datos ficticios generados para un laboratorio de seguridad - no corresponden a personas reales.

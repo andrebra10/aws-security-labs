@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}PPK Concesionarios - Tenemos el coche ideal para ti{% endblock %}
+{% block content %}
+<section class="hero-ppk text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">PPK Concesionarios</h1>
+    <p class="lead">Tenemos el coche ideal para ti.</p>
+    <a href="/vehiculos" class="btn btn-ppk btn-lg mt-3">Ver vehículos</a>
+  </div>
+</section>
+
+<section class="container py-5" id="vehiculos-destacados">
+  <h2 class="mb-4">Vehículos destacados</h2>
+  <div class="row g-4">
+    {% for v in featured_vehicles %}
+    <div class="col-md-3">
+      <div class="card card-ppk h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ v.brand }} {{ v.model }}</h5>
+          <p class="card-text text-muted">{{ v.year }} &middot; {{ "{:,.0f}".format(v.mileage_km) }} km</p>
+          <p class="fw-bold">{{ "{:,.2f}".format(v.price) }} €</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container py-5" id="financiacion">
+  <h2 class="mb-4">Financiación</h2>
+  <p class="text-muted">
+    Financiación a medida para vehículos nuevos y de ocasión, con estudio de
+    viabilidad en menos de 24 horas y plazos desde 12 hasta 84 meses.
+  </p>
+  <a href="/download?file=financing_guide.pdf" class="btn btn-outline-secondary">Descargar guía de financiación</a>
+  <a href="/download?file=manual.pdf" class="btn btn-outline-secondary">Manual de usuario</a>
+</section>
+
+<section class="container py-5" id="contacto">
+  <h2 class="mb-4">Contacto</h2>
+  <p class="text-muted mb-1">Concesionario central &middot; Valencia, España</p>
+  <p class="text-muted mb-1">Tel: +34 900 123 456</p>
+  <p class="text-muted">info@ppkconcesionario.com</p>
+</section>
+{% endblock %}

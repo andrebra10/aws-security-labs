@@ -1,0 +1,12 @@
+contrato_id,cliente,vehiculo,importe_financiado,cuotas,tipo_interes,estado,fecha_firma
+CNT-2026-0041,Laura Ibáñez Soto,SEAT León 1.5 TSI,18500.00,60,6.9%,activo,2026-01-14
+CNT-2026-0042,Javier Molina Prat,Volkswagen T-Roc,24900.00,72,7.2%,activo,2026-01-22
+CNT-2026-0043,Nuria Campos Reyes,Renault Clio,12300.00,48,6.5%,activo,2026-02-03
+CNT-2026-0044,Sergio Ferrer Vidal,Peugeot 3008,27950.00,72,7.5%,pendiente_firma,2026-02-18
+CNT-2026-0045,Marta Lozano Aguirre,Toyota Corolla Hybrid,21200.00,60,6.8%,activo,2026-03-01
+CNT-2026-0046,Diego Salas Peña,Kia Sportage,25400.00,72,7.1%,activo,2026-03-09
+CNT-2026-0047,Elena Rubio Castell,Hyundai Tucson,26800.00,60,6.9%,cancelado,2026-03-20
+CNT-2026-0048,Álvaro Nieto Font,Skoda Octavia,19900.00,48,6.6%,activo,2026-04-02
+
+NOTA INTERNA: documento exportado desde el módulo de financiación para auditoría trimestral.
+No distribuir fuera del departamento comercial y administración.

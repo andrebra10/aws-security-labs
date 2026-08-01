@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Documentación comercial - PPK Concesionarios{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Documentación comercial</h2>
+  <p class="text-muted">Catálogos y folletos disponibles para compartir con clientes.</p>
+
+  {% if documents %}
+  <ul class="list-group">
+    {% for key in documents %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ key }}
+      <a class="btn btn-sm btn-outline-secondary" href="/documentos/{{ key.split('/')[-1] }}">Descargar</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="text-muted">No hay documentos disponibles en este momento.</p>
+  {% endif %}
+</div>
+{% endblock %}

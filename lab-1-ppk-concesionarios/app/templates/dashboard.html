@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Panel - PPK Concesionarios{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-1">Bienvenido, {{ user.full_name }}</h2>
+  <p class="text-muted mb-4">Rol: {{ user.role }}</p>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card card-ppk">
+        <div class="card-body">
+          <h6 class="text-muted">Vehículos en stock</h6>
+          <p class="display-6">{{ stats.vehicles }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-ppk">
+        <div class="card-body">
+          <h6 class="text-muted">Clientes registrados</h6>
+          <p class="display-6">{{ stats.clients }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-ppk">
+        <div class="card-body">
+          <h6 class="text-muted">Solicitudes de financiación</h6>
+          <p class="display-6">{{ stats.requests }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

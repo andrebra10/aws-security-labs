@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Clientes - PPK Concesionarios{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Clientes</h2>
+  <table class="table table-hover bg-white">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Ciudad</th>
+        <th>Alta</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in clients %}
+      <tr>
+        <td>{{ c.full_name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.phone }}</td>
+        <td>{{ c.city }}</td>
+        <td>{{ c.created_at.strftime("%d/%m/%Y") }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

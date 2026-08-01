@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Vehículos - PPK Concesionarios{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Nuestros vehículos</h2>
+  <table class="table table-hover bg-white">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th>Kilómetros</th>
+        <th>Precio</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in vehicles %}
+      <tr>
+        <td>{{ v.brand }}</td>
+        <td>{{ v.model }}</td>
+        <td>{{ v.year }}</td>
+        <td>{{ "{:,.0f}".format(v.mileage_km) }} km</td>
+        <td>{{ "{:,.2f}".format(v.price) }} €</td>
+        <td><span class="badge bg-secondary">{{ v.status }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
