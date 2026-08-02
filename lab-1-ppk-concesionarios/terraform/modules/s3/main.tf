@@ -5,6 +5,11 @@ resource "random_id" "bucket_suffix" {
 resource "aws_s3_bucket" "data" {
   bucket = "${var.bucket_name_prefix}-${random_id.bucket_suffix.hex}"
 
+  # Versioning is enabled below; without force_destroy, `terraform destroy`
+  # fails with BucketNotEmpty as soon as there's more than one version of
+  # any object (e.g. after a second `apply`).
+  force_destroy = true
+
   tags = {
     Name = "${var.bucket_name_prefix}-${random_id.bucket_suffix.hex}"
   }

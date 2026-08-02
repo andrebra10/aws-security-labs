@@ -16,6 +16,12 @@ resource "random_id" "trail_bucket_suffix" {
 resource "aws_s3_bucket" "trail" {
   bucket = "${var.project_name}-cloudtrail-${random_id.trail_bucket_suffix.hex}"
 
+  # CloudTrail keeps writing new log objects the whole time the lab is up,
+  # and versioning is enabled below - without this, `terraform destroy`
+  # fails with BucketNotEmpty because neither current objects nor old
+  # versions get cleaned up automatically.
+  force_destroy = true
+
   tags = {
     Name = "${var.project_name}-cloudtrail-${random_id.trail_bucket_suffix.hex}"
   }
