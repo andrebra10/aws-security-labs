@@ -78,10 +78,34 @@ laboratorio está listo para auditar.
 
 El `apply` también crea un trail de CloudTrail (bucket S3 + CloudWatch Logs)
 y un detector de GuardDuty, para poder revisar la auditoría desde el lado
-defensivo (ver [`docs/detection.md`](detection.md)). Solo se permite **un**
-detector de GuardDuty por cuenta/región: si ya tienes GuardDuty activado en
-esa cuenta y región, pon `enable_guardduty = false` en tu
-`terraform.tfvars` antes de aplicar, o el `apply` fallará.
+defensivo (ver [`docs/detection.md`](detection.md)). Hay dos motivos
+habituales por los que la creación del detector de GuardDuty puede fallar,
+en ambos casos sin afectar al resto de la infraestructura:
+
+- **Ya tienes GuardDuty activo** en esa cuenta/región (solo se permite un
+  detector por cuenta/región):
+  ```
+  Error: creating GuardDuty Detector: ... BadRequestException: ... already exists
+  ```
+- **Tu cuenta no tiene GuardDuty habilitado como servicio** (frecuente en
+  cuentas nuevas, de laboratorio/formación, o gestionadas centralmente por
+  una AWS Organization):
+  ```
+  Error: creating GuardDuty Detector: ... SubscriptionRequiredException:
+  The AWS Access Key Id needs a subscription for the service
+  ```
+
+En cualquiera de los dos casos, pon en tu `terraform.tfvars`:
+
+```hcl
+enable_guardduty = false
+```
+
+y vuelve a ejecutar `terraform apply`. El resto del laboratorio (VPC, EC2,
+RDS, S3, CloudTrail) no depende de GuardDuty y se despliega igual; solo
+perderás la parte de detección descrita en
+[`docs/detection.md`](detection.md) relativa a
+`InstanceCredentialExfiltration.OutsideAWS`.
 
 ## Destruir el laboratorio
 
